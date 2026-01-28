@@ -8,7 +8,10 @@ const thsHead = trHead.querySelectorAll('th');
 const newThHead = document.createElement('th');
 
 newThHead.textContent = thsHead[1].textContent;
-trHead.insertBefore(newThHead, thsHead[thsHead.length - 1]);
+
+if (thsHead.length >= 2) {
+  trHead.insertBefore(newThHead, thsHead[thsHead.length - 1]);
+}
 
 // for tfoot
 const trFoot = table.querySelector('tfoot tr');
@@ -16,7 +19,10 @@ const thsFoot = trFoot.querySelectorAll('th');
 const newThFoot = document.createElement('th');
 
 newThFoot.textContent = thsFoot[1].textContent;
-trFoot.insertBefore(newThFoot, thsFoot[thsFoot.length - 1]);
+
+if (trFoot.length >= 2) {
+  trFoot.insertBefore(newThFoot, thsFoot[thsFoot.length - 1]);
+}
 
 // for tbody
 const trs = table.querySelectorAll('tbody tr');
