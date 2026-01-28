@@ -5,22 +5,22 @@ const table = document.querySelector('table');
 // for thead
 const trHead = table.querySelector('thead tr');
 const thsHead = trHead.querySelectorAll('th');
-const newThHead = document.createElement('th');
-
-newThHead.textContent = thsHead[1].textContent;
 
 if (thsHead.length >= 2) {
+  const newThHead = document.createElement('th');
+
+  newThHead.textContent = thsHead[1].textContent;
   trHead.insertBefore(newThHead, thsHead[thsHead.length - 1]);
 }
 
 // for tfoot
 const trFoot = table.querySelector('tfoot tr');
 const thsFoot = trFoot.querySelectorAll('th');
-const newThFoot = document.createElement('th');
 
-newThFoot.textContent = thsFoot[1].textContent;
+if (thsFoot.length >= 2) {
+  const newThFoot = document.createElement('th');
 
-if (trFoot.length >= 2) {
+  newThFoot.textContent = thsFoot[1].textContent;
   trFoot.insertBefore(newThFoot, thsFoot[thsFoot.length - 1]);
 }
 
